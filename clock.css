@@ -69,6 +69,7 @@ body {
     border-radius: 6px;
     transform-origin: bottom center;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    z-index: 1;
 }
 
 .second-hand {
