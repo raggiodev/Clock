@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light: #fff;
+    --dark: #000;
+    --hour-hand-color: #f5f5f5;
+    --hour-hand-degrees: 0deg;
+    --minute-hand-color: #e3e3e6;
+    --minute-hand-degrees: 0deg;
+    --second-hand-color: #c9dfec;
+    --second-hand-degrees: 0deg;
+    --numbers-color: #231464;
+    --bullets-color: #34189b;
+    --start: 0deg;
+    --end: 0deg;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--dark);
+}
+
+.clock {
+    position: relative;
+    min-width: 320px;
+    width: 25vw;
+    height: 25vw;
+    min-height: 320px;
+    border-radius: 50%;
+    background: conic-gradient(from var(--start),
+            #ffffff80 2deg,
+            #00000080 var(--end),
+            #ffffffb3 2deg,
+            #000000b3);
+    margin: 0 auto;
+    border: 7px solid #767ba3;
+    box-shadow: inset 4px 4px 10px #00000080,
+        inset -4px -4px 10px #1e3e4780, 4px 4px 10px #0000004d;
+    overflow: hidden;
+}
+
+.clock::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #4215aa;
+    background: radial-gradient(circle,
+            #160f7ab3 80%,
+            #9587d3e6 100%);
+    content: "";
+    z-index: -1;
+}
+
+.hand {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    height: 45%;
+    width: 4px;
+    margin-left: -2px;
+    background: var(--second-hand-color);
+    border-radius: 6px;
+    transform-origin: bottom center;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.second-hand {
+    transform: rotate(var(--second-hand-degrees));
+}
+
+.hour-hand {
+    height: 35%;
+    width: 5px;
+    border-radius: 40px;
+    background-color: var(--hour-hand-color);
+    transform: rotate(var(--hour-hand-degrees));
+}
+
+.minute-hand {
+    height: 50%;
+    background: var(--minute-hand-color);
+    transform: rotate(var(--minute-hand-degrees));
+}
+
+.clock ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.clock ul li {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: "Georgia", Times, serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--bullets-color);
+}
+
+.clock ul li:nth-child(1) {
+    top: 7.5%;
+    right: 23%;
+}
+
+.clock ul li:nth-child(2) {
+    top: 25.5%;
+    right: 6.75%;
+}
+
+.clock ul li:nth-child(3) {
+    top: calc(50% - 13px);
+    right: 2%;
+    font-size: 26px;
+    color: var(--numbers-color);
+}
+
+.clock ul li:nth-child(4) {
+    top: 70%;
+    right: 7%;
+}
+
+.clock ul li:nth-child(5) {
+    top: 87%;
+    right: 23.5%;
+}
+
+.clock ul li:nth-child(6) {
+    top: calc(99% - 26px);
+    right: calc(50% - 10px);
+    font-size: 26px;
+    color: var(--numbers-color);
+}
+
+.clock ul li:nth-child(7) {
+    top: 86.4%;
+    left: 23.3%;
+}
+
+.clock ul li:nth-child(8) {
+    top: 70%;
+    left: 7%;
+}
+
+.clock ul li:nth-child(9) {
+    top: calc(50% - 13px);
+    left: 2%;
+    font-size: 26px;
+    color: var(--numbers-color);
+}
+
+.clock ul li:nth-child(10) {
+    top: 24.5%;
+    left: 6.5%;
+}
+
+.clock ul li:nth-child(11) {
+    top: 7%;
+    left: 23.5%;
+}
+
+.clock ul li:nth-child(12) {
+    top: 2%;
+    right: calc(50% - 7px);
+    font-size: 26px;
+    color: var(--numbers-color);
+}
