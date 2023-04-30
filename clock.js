@@ -2,9 +2,9 @@ const clock = document.getElementById("clock");
 
 function setDate() {
     const now = new Date();
-    const secondsAngle = now.getSeconds() * 6;
-    const minsAngle = now.getMinutes() * 6 + secondsAngle / 60;
-    const hourAngle = ((now.getHours() % 12) / 12) * 360 + minsAngle / 12;
+    const seconds = now.getSeconds() * 6;
+    const mins = now.getMinutes() * 6 + seconds / 60;
+    const hour = ((now.getHours() % 12) / 12) * 360 + mins / 12;
 }
 
 
