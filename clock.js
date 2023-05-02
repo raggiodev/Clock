@@ -6,15 +6,15 @@ function setClock() {
     const now = new Date();
 
     const seconds = now.getSeconds();
-    const secsDeg = ((seconds / 60) * 360) + 90;
+    const secsDeg = seconds * (360 / 60) + 90;
     secondHand.style.transform = `rotate(${secsDeg}deg)`;
 
     const minutes = now.getMinutes();
-    const minsDeg = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+    const minsDeg = minutes * (360 / 60) + seconds * (360 / 60) + 90;
     minuteHand.style.transform = `rotate(${minsDeg}deg)`;
 
     const hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
-    const hrsDeg = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+    const hrsDeg = hours * (360 / 12) + minutes * (360 / 60) + seconds * (360 / 60) + 90;
     hourHand.style.transform = `rotate(${hrsDeg}deg)`;
 }
 
