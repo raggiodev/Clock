@@ -13,7 +13,7 @@ function setClock() {
     const minsDeg = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
     minuteHand.style.transform = `rotate(${minsDeg}deg)`;
 
-    const hours = now.getHrs() > 12 ? now.getHrs() - 12 : now.getHrs();
+    const hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
     const hrsDeg = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
     hourHand.style.transform = `rotate(${hrsDeg}deg)`;
 }
