@@ -4,8 +4,8 @@ const hourHand = document.querySelector('.hour-hand');
 
 function setClock() {
     const now = new Date();
-    const argentinaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
-
+    //const argentinaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
+    
     const seconds = now.getSeconds();
     const secsDeg = seconds * (360 / 60);
     secondHand.style.transform = `rotate(${secsDeg}deg)`;
