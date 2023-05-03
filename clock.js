@@ -6,16 +6,16 @@ function setClock() {
     const now = new Date();
     const argentinaTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
 
-    const seconds = now.getSeconds();
-    const secsDeg = seconds * (360 / 60) + 90;
+    const seconds = argentinaTime.getSeconds();
+    const secsDeg = (seconds * (360 / 60)) + 90;
     secondHand.style.transform = `rotate(${secsDeg}deg)`;
 
-    const minutes = now.getMinutes();
-    const minsDeg = minutes * (360 / 60) + (seconds * (360 / 60) / 360) + 90;
+    const minutes = argentinaTime.getMinutes();
+    const minsDeg = (minutes * (360 / 60)) + ((seconds / 60) * (360 / 60)) + 90;
     minuteHand.style.transform = `rotate(${minsDeg}deg)`;
 
-    const hours = now.getHours() > 12 ? now.getHours() - 12 : now.getHours();
-    const hrsDeg = hours * (360 / 12) + (minutes * (360 / 60) / 360 ) + (seconds * (360 / 60) / 360) + 90;
+    const hours = argentinaTime.getHours() > 12 ? argentinaTime.getHours() - 12 : argentinaTime.getHours();
+    const hrsDeg = (hours * (360 / 12)) + ((minutes / 60) * (360 / 12)) + ((seconds / 60) * (360 / 12)) + 90;
     hourHand.style.transform = `rotate(${hrsDeg}deg)`;
 }
 
